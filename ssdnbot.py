@@ -14,7 +14,7 @@ def send_tweet():
   #create results set of all DPLA items where provider is SSDN 
   #result set is limited to 500 results, per DPLA API rules
   fields = {"provider" : "Sunshine State Digital Network"}
-  result = dpla.search(searchFields=fields, page_size=10)
+  result = dpla.search(searchFields=fields, page_size=500)
 
   #get random item from the results
   items = random.sample(result.items, 1)
