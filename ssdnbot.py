@@ -17,20 +17,41 @@ def send_tweet():
   result = dpla.search(searchFields=fields, page_size=10)
 
   #get random item from the results
-  item = random.sample(result.items, 1)
+  items = random.sample(result.items, 1)
 
   #print the id of the random item to the console - used for testing
-  #print item[0]["id"]
+  #print(items[0]["id"])
 
-  #extract elements from the record to use in tweet
-  url = "https://dp.la/item/" + item[0]["id"]
-  title = item[0]["sourceResource"]["title"]
-  title = str(title)[2:-1] #remove square brackets and 'u'
-  tweet_text = "%s %s" % (title, url)
+  #extract element from the record to use in tweet
+  for item in items:
+  #determine if description field is present, and compose tweety accordingly
+    if "description" in item["sourceResource"]:
+      url = "https://dp.la/item/" + item["id"]
+      title = item["sourceResource"]["title"]
+      title = str(title)[1:-1] #remove square brackets
+      title = (title[:100] + '...\'') if len(title) > 100 else title
+      
+      description = item["sourceResource"]["description"]
+      description = str(description)[1:-1] #remove square brackets
+      description = (description[:130] + '...\'') if len(description) > 130 else description
+      
+      tweet_text = title + '\n' + description + '\n' + url
+      
+      #print(title)
+      #print(description)
+      
+    else:
+      url = "https://dp.la/item/" + item["id"]
+      title = item["sourceResource"]["title"]
+      title = str(title)[1:-1] #remove square brackets
+      title = (title[:230] + '...') if len(title) > 230 else title
+      tweet_text = "%s %s" % (title, url)
+    
+      #print(title)
+	  
+    print(tweet_text)
+    api.update_status(tweet_text)
 
-  print tweet_text
-  #api.update_status(tweet_text)
-  
 send_tweet()
 
 #while True:
