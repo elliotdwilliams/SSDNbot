@@ -53,8 +53,3 @@ def send_tweet():
     api.update_status(tweet_text)
 
 send_tweet()
-
-#while True:
-#  send_tweet()
-#  print 'hi'
-#  time.sleep(10)
