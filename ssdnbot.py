@@ -1,4 +1,4 @@
-import tweepy, random, time
+import tweepy, random
 from dpla.api import DPLA 
 from credentials import *
 
@@ -11,10 +11,12 @@ api = tweepy.API(auth)
 dpla = DPLA(DPLA_KEY)
 
 def send_tweet():
+  #generate random number to use as page value
+  random_page = random.randint(0, 100)
+  
   #create results set of all DPLA items where provider is SSDN 
-  #result set is limited to 500 results, per DPLA API rules
   fields = {"provider" : "Sunshine State Digital Network"}
-  result = dpla.search(searchFields=fields, page_size=500)
+  result = dpla.search(searchFields=fields, page_size=100, page=random_page)
 
   #get random item from the results
   items = random.sample(result.items, 1)
@@ -45,11 +47,12 @@ def send_tweet():
       title = item["sourceResource"]["title"]
       title = str(title)[1:-1] #remove square brackets
       title = (title[:230] + '...') if len(title) > 230 else title
+      
       tweet_text = "%s %s" % (title, url)
     
       #print(title)
 	  
     print(tweet_text)
-    api.update_status(tweet_text)
+    #api.update_status(tweet_text)
 
 send_tweet()
