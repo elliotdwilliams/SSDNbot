@@ -53,6 +53,6 @@ def send_tweet():
       #print(title)
 	  
     print(tweet_text)
-    #api.update_status(tweet_text)
+    api.update_status(tweet_text)
 
 send_tweet()
