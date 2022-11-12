@@ -3,8 +3,8 @@
 
 Built in Python 3.6.  Uses [tweepy](https://github.com/tweepy/tweepy) to interact with Twitter, and [DPyLA](https://github.com/bibliotechy/DPyLA/blob/master/README.md) to interact with the DPLA API.
 
-The script is deployed on [Heroku](www.heroku.com), and tweets out twice a day.
+The script is deployed on [PythonAnywhere](https://www.pythonanywhere.com/) (previously on [Heroku](www.heroku.com)), and tweets out once a day.
 
 A lot of the inspiration and code for this bot was drawn from [@DPLAbot](https://github.com/samplereality/DPLAbot), [@dplafy](https://github.com/ruebot/dplafy), and a [tutorial by Brian Caffey](http://briancaffey.github.io/2016/04/05/twitter-bot-tutorial.html).
 
-The bot's current profile pic on Twitter is ["The curious Traveler's Palm of Florida"](http://merrick.library.miami.edu/cdm/ref/collection/asm0299/id/636), and its current header pic is ["Florida State Capitol at night, Tallahasse, FL"](http://fsu.digital.flvc.org/islandora/object/fsu%3A6570).
+The bot's current profile pic on Twitter is ["The curious Traveler's Palm of Florida"](http://merrick.library.miami.edu/cdm/ref/collection/asm0299/id/636), and its current header pic is ["Color Postcard of Fort Myers Beach"](https://dp.la/item/93ec311fbccc83fb085621fc341800a9).
