@@ -3,7 +3,7 @@
 
 Built in Python 3.6.  Uses [tweepy](https://github.com/tweepy/tweepy) to interact with Twitter, and [DPyLA](https://github.com/bibliotechy/DPyLA/blob/master/README.md) to interact with the DPLA API.
 
-The script is deployed on [PythonAnywhere](https://www.pythonanywhere.com/) (previously on [Heroku](www.heroku.com)), and tweets out once a day.
+The script was deployed on [PythonAnywhere](https://www.pythonanywhere.com/) (previously on [Heroku](www.heroku.com)), and tweeted out once a day.  The account stopped tweeting in February 2023.
 
 A lot of the inspiration and code for this bot was drawn from [@DPLAbot](https://github.com/samplereality/DPLAbot), [@dplafy](https://github.com/ruebot/dplafy), and a [tutorial by Brian Caffey](http://briancaffey.github.io/2016/04/05/twitter-bot-tutorial.html).
 
